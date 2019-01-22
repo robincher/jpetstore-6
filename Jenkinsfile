@@ -12,7 +12,8 @@ pipeline {
       parallel {
         stage('SonarQube Testing') {
           steps {
-            sh 'mvn sonar:sonar =Dsonar.host.url=http://54.254.189.208:8081 -Dlicense.skip=true'
+            sh '''mvn sonar:sonar -Dsonar.host.url=http://54.254.189.208:8081 -Dlicense.skip=true
+'''
           }
         }
         stage('Print Tester Credentials') {
